@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const dateContainer = document.getElementById('date-container');
+    const today = new Date();
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    dateContainer.textContent = today.toLocaleDateString('en-US', options);
+
     const generateBtn = document.getElementById('generate-btn');
     const lottoGamesContainer = document.getElementById('lotto-games');
     const themeSwitch = document.getElementById('theme-switch');
