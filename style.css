@@ -91,6 +91,13 @@ h1 {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+.menu-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
 .menu-category {
     font-size: 1.2rem;
     font-weight: bold;

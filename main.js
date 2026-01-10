@@ -10,18 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const html = document.documentElement;
 
     const menus = [
-        { category: 'Korean', name: 'Bibimbap' },
-        { category: 'Korean', name: 'Kimchi Jjigae' },
-        { category: 'Korean', name: 'Bulgogi' },
-        { category: 'Japanese', name: 'Sushi' },
-        { category: 'Japanese', name: 'Ramen' },
-        { category: 'Japanese', name: 'Tonkatsu' },
-        { category: 'Chinese', name: 'Jajangmyeon' },
-        { category: 'Chinese', name: 'Mapo Tofu' },
-        { category: 'Chinese', name: 'Sweet and Sour Pork' },
-        { category: 'Western', name: 'Pizza' },
-        { category: 'Western', name: 'Pasta' },
-        { category: 'Western', name: 'Steak' },
+        { category: 'Korean', name: 'Bibimbap', image: 'https://via.placeholder.com/400x300.png?text=Bibimbap' },
+        { category: 'Korean', name: 'Kimchi Jjigae', image: 'https://via.placeholder.com/400x300.png?text=Kimchi+Jjigae' },
+        { category: 'Korean', name: 'Bulgogi', image: 'https://via.placeholder.com/400x300.png?text=Bulgogi' },
+        { category: 'Japanese', name: 'Sushi', image: 'https://via.placeholder.com/400x300.png?text=Sushi' },
+        { category: 'Japanese', name: 'Ramen', image: 'https://via.placeholder.com/400x300.png?text=Ramen' },
+        { category: 'Japanese', name: 'Tonkatsu', image: 'https://via.placeholder.com/400x300.png?text=Tonkatsu' },
+        { category: 'Chinese', name: 'Jajangmyeon', image: 'https://via.placeholder.com/400x300.png?text=Jajangmyeon' },
+        { category: 'Chinese', name: 'Mapo Tofu', image: 'https://via.placeholder.com/400x300.png?text=Mapo+Tofu' },
+        { category: 'Chinese', name: 'Sweet and Sour Pork', image: 'https://via.placeholder.com/400x300.png?text=Sweet+and+Sour+Pork' },
+        { category: 'Western', name: 'Pizza', image: 'https://via.placeholder.com/400x300.png?text=Pizza' },
+        { category: 'Western', name: 'Pasta', image: 'https://via.placeholder.com/400x300.png?text=Pasta' },
+        { category: 'Western', name: 'Steak', image: 'https://via.placeholder.com/400x300.png?text=Steak' },
     ];
 
     const recommendMenu = () => {
@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const menu = recommendMenu();
         menuContainer.innerHTML = `
             <div class="menu-item">
+                <img src="${menu.image}" alt="${menu.name}" class="menu-image">
                 <div class="menu-category">${menu.category}</div>
                 <div class="menu-name">${menu.name}</div>
             </div>
