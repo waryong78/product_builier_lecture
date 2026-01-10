@@ -4,53 +4,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     dateContainer.textContent = today.toLocaleDateString('en-US', options);
 
-    const generateBtn = document.getElementById('generate-btn');
-    const lottoGamesContainer = document.getElementById('lotto-games');
+    const recommendBtn = document.getElementById('recommend-btn');
+    const menuContainer = document.getElementById('menu-recommendations');
     const themeSwitch = document.getElementById('theme-switch');
     const html = document.documentElement;
 
-    const getBallColor = (number) => {
-        if (number <= 10) return 'var(--ball-color-1)';
-        if (number <= 20) return 'var(--ball-color-2)';
-        if (number <= 30) return 'var(--ball-color-3)';
-        if (number <= 40) return 'var(--ball-color-4)';
-        return 'var(--ball-color-5)';
+    const menus = [
+        { category: 'Korean', name: 'Bibimbap' },
+        { category: 'Korean', name: 'Kimchi Jjigae' },
+        { category: 'Korean', name: 'Bulgogi' },
+        { category: 'Japanese', name: 'Sushi' },
+        { category: 'Japanese', name: 'Ramen' },
+        { category: 'Japanese', name: 'Tonkatsu' },
+        { category: 'Chinese', name: 'Jajangmyeon' },
+        { category: 'Chinese', name: 'Mapo Tofu' },
+        { category: 'Chinese', name: 'Sweet and Sour Pork' },
+        { category: 'Western', name: 'Pizza' },
+        { category: 'Western', name: 'Pasta' },
+        { category: 'Western', name: 'Steak' },
+    ];
+
+    const recommendMenu = () => {
+        return menus[Math.floor(Math.random() * menus.length)];
     };
 
-    const generateLottoNumbers = () => {
-        const numbers = new Set();
-        while (numbers.size < 6) {
-            numbers.add(Math.floor(Math.random() * 45) + 1);
-        }
-        return Array.from(numbers).sort((a, b) => a - b);
-    };
-
-    const displayLottoGames = () => {
-        lottoGamesContainer.innerHTML = '';
-        for (let i = 0; i < 5; i++) {
-            const gameElement = document.createElement('div');
-            gameElement.classList.add('lotto-game');
-
-            const gameLabel = document.createElement('span');
-            gameLabel.classList.add('game-label');
-            gameLabel.textContent = `Game ${i + 1}`;
-            gameElement.appendChild(gameLabel);
-
-            const numbersContainer = document.createElement('div');
-            numbersContainer.classList.add('lotto-numbers');
-
-            const numbers = generateLottoNumbers();
-            numbers.forEach(number => {
-                const ball = document.createElement('div');
-                ball.classList.add('lotto-ball');
-                ball.textContent = number;
-                ball.style.backgroundColor = getBallColor(number);
-                numbersContainer.appendChild(ball);
-            });
-
-            gameElement.appendChild(numbersContainer);
-            lottoGamesContainer.appendChild(gameElement);
-        }
+    const displayMenu = () => {
+        const menu = recommendMenu();
+        menuContainer.innerHTML = `
+            <div class="menu-item">
+                <div class="menu-category">${menu.category}</div>
+                <div class="menu-name">${menu.name}</div>
+            </div>
+        `;
     };
 
     // Theme switcher
@@ -68,8 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    generateBtn.addEventListener('click', displayLottoGames);
+    recommendBtn.addEventListener('click', displayMenu);
 
-    // Initial generation
-    displayLottoGames();
+    // Initial recommendation
+    displayMenu();
 });

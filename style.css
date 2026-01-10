@@ -78,41 +78,30 @@ h1 {
     transform: translateY(-2px);
 }
 
-.lotto-games {
+.menu-recommendations {
     display: grid;
     gap: 15px;
 }
 
-.lotto-game {
-    display: flex;
-    align-items: center;
+.menu-item {
     background-color: var(--background-color);
-    padding: 10px 15px;
+    padding: 20px;
     border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.game-label {
+.menu-category {
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-right: 15px;
-    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
 }
 
-.lotto-numbers {
-    display: flex;
-    gap: 10px;
-}
-
-.lotto-ball {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.menu-name {
+    font-size: 2rem;
+    color: var(--text-color);
     font-weight: bold;
-    color: #fff;
-    font-size: 1.1rem;
-    box-shadow: inset -2px -2px 5px rgba(0,0,0,0.3), 2px 2px 5px rgba(255,255,255,0.3);
 }
 
 /* Theme Switcher */
