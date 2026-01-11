@@ -150,3 +150,52 @@ h1 {
 .theme-switch-checkbox:checked + .theme-switch-label::after {
     transform: translateX(25px);
 }
+
+/* Partnership Inquiry Form Styles */
+.form-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--text-color);
+}
+
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: var(--text-color);
+}
+
+.inquiry-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inquiry-form label {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.inquiry-form input[type="text"],
+.inquiry-form input[type="email"],
+.inquiry-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.inquiry-form input[type="text"]:focus,
+.inquiry-form input[type="email"]:focus,
+.inquiry-form textarea:focus {
+    border-color: var(--button-background);
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    outline: none;
+}
+
+.inquiry-form textarea {
+    resize: vertical;
+}

@@ -19,6 +19,21 @@
         <main>
             <button id="recommend-btn" class="generate-btn">Recommend Menu</button>
             <div id="menu-recommendations" class="menu-recommendations"></div>
+            <section class="form-section">
+                <h2>Partnership Inquiry</h2>
+                <form action="https://formspree.io/f/mqeezwod" method="POST" class="inquiry-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit" class="generate-btn">Send Inquiry</button>
+                </form>
+            </section>
         </main>
     </div>
     <script src="main.js"></script>
